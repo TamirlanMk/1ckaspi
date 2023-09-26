@@ -1,0 +1,87 @@
+.hero {
+  overflow: hidden;
+  position: relative;
+
+  &__container {
+    position: relative;
+
+    padding-bottom: 156px;
+  }
+
+  &__row {
+    max-width: 50%;
+    width: 100%;
+  }
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+
+  color: #3DB3E4;
+  font-family: $montserrat;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1em;
+
+  margin: 0 0 20px;
+
+  &-word {
+    display: flex;
+    position: relative;
+
+    span:nth-child(1) {
+      z-index: 2;
+    }
+
+    span:nth-child(2) {
+      position: absolute;
+      z-index: 1;
+      top: 2px;
+      left: 2px;
+
+      color: #fff;
+      text-shadow: rgb(61, 179, 228) 2px 0 0, rgb(61, 179, 228) 1.75517px 0.958851px 0, rgb(61, 179, 228) 1.0806px 1.68294px 0, rgb(61, 179, 228) 0.141474px 1.99499px 0, rgb(61, 179, 228) -0.832294px 1.81859px 0, rgb(61, 179, 228) -1.60229px 1.19694px 0, rgb(61, 179, 228) -1.97998px 0.28224px 0, rgb(61, 179, 228) -1.87291px -0.701566px 0, rgb(61, 179, 228) -1.30729px -1.5136px 0, rgb(61, 179, 228) -0.421592px -1.95506px 0, rgb(61, 179, 228) 0.567324px -1.91785px 0, rgb(61, 179, 228) 1.41734px -1.41108px 0, rgb(61, 179, 228) 1.92034px -0.558831px 0;
+    }
+  }
+}
+
+.hero__subtitle {
+  color: #000;
+  font-family: $montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0 0 80px;
+}
+
+.hero__image {
+  width: 340px;
+
+  &-1 {
+    position: absolute;
+    bottom: 0;
+    right: calc(25% + 40px);
+  }
+
+  &-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+.integration {
+  background: url("../assets/integration-bg.png") repeat-y top center;
+  background-size: cover;
+
+  &__title {
+    text-transform: uppercase;
+  }
+}
+
+.integration__notebook {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  margin-bottom: 68px;
+
+  img {
+    width: 1200px;
+    height: 720px;
+    flex-shrink: 0;
+  }
+}
+
+.integration__footer {
+  display: flex;
+  justify-content: center;
+}

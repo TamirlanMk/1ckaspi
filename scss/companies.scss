@@ -1,0 +1,31 @@
+.companies {
+  background: #0B1F27;
+
+  &__container {
+    padding-bottom: 0;
+  }
+
+  &__container-fluid {
+    padding-bottom: 80px;
+  }
+
+  &__title {
+    color: #FFFFFF;
+  }
+
+  &__slider {
+
+    &-slide {
+      margin: 0 40px;
+      border-radius: 20px;
+      background: #E0E0E0;
+      height: 120px;
+
+      img {
+        object-fit: contain;
+        display: block;
+        height: 100%;
+      }
+    }
+  }
+}

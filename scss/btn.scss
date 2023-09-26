@@ -1,0 +1,50 @@
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+  color: #FFF;
+  text-align: center;
+  font-family: $montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1em;
+
+  border: none;
+  border-radius: 100px;
+
+  padding: 22px 150px;
+  background: #3DB3E4;
+
+  transition: color .2s ease, background .2s ease;
+
+  &-hero:hover,
+  &-integration:hover {
+    background: #26B8F4;
+  }
+
+  &-white {
+    color: #3DB3E4;
+    background: #FFFFFF;
+    border: 2px solid #FFF;
+  }
+
+  &-white:hover {
+    color: #fff;
+    background: #3DB3E4;
+  }
+
+  &-works {
+    color: #3DB3E4;
+    background: #FFFFFF;
+    border: 2px solid #3DB3E4;
+  }
+
+  &-works:hover {
+    color: #fff;
+    background: #3DB3E4;
+  }
+}
