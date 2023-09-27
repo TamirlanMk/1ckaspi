@@ -97,11 +97,7 @@
       position: relative;
 
       &--step-4 {
-        padding-left: 200px;
-
-        @media (max-width: 1200px) {
-          padding-left: 100px;
-        }
+        padding-left: 100px;
       }
     }
 
