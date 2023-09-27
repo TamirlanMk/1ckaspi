@@ -76,6 +76,22 @@
       font-weight: 500;
       line-height: 1.2em;
 
+      & .static-text {
+        display: none;
+
+        @media (max-width: 992px) {
+          display: block;
+        }
+      }
+
+      & .animated-text {
+        display: block;
+
+        @media (max-width: 992px) {
+          display: none;
+        }
+      }
+
       @media (max-width: 1400px) {
         font-size: 20px;
       }
