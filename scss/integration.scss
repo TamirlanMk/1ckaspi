@@ -12,7 +12,16 @@
   flex-direction: row;
   justify-content: center;
 
-  margin-bottom: 68px;
+  margin-top: -300px;
+  margin-bottom: 20px;
+
+  #lottie__notebook {
+    max-width: 1200px;
+    width: 100%;
+    max-height: 720px;
+    height: 100%;
+    flex-shrink: 0;
+  }
 
   img {
     max-width: 1200px;
