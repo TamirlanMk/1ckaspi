@@ -17,6 +17,11 @@
     justify-content: space-between;
 
     margin-bottom: 100px;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
   }
 
   &__list {
@@ -34,36 +39,72 @@
 
     &-number {
       height: 60px;
-      width: 60px;
+      min-width: 60px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
 
       background: #FFFFFF;
       border-radius: 8px;
 
-      text-align: center;
       color: #3DB3E4;
       font-family: $inter;
       font-size: 48px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+
+      @media (max-width: 1400px) {
+        font-size: 42px;
+        height: 50px;
+        min-width: 50px;
+      }
+      @media (max-width: 1400px) {
+        font-size: 32px;
+        height: 40px;
+        min-width: 40px;
+      }
     }
 
     &-text {
       color: #FFF;
       font-family: $inter;
-      font-size: 26px;
+      font-size: 24px;
       font-style: normal;
       font-weight: 500;
-      line-height: 26px; /* 100% */
+      line-height: 1.2em;
+
+      @media (max-width: 1400px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 16px;
+      }
     }
   }
 
   &__row {
     max-width: 50%;
     width: 100%;
+
+    @media (max-width: 576px) {
+      max-width: 80%;
+    }
   }
 
   &__row:nth-child(1) {
     padding-right: 60px;
+
+    @media (max-width: 576px) {
+      padding: 0;
+      margin-bottom: 40px;
+    }
   }
 }

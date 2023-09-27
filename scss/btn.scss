@@ -8,7 +8,7 @@
   color: #FFF;
   text-align: center;
   font-family: $montserrat;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 1em;
@@ -20,6 +20,32 @@
   background: #3DB3E4;
 
   transition: color .2s ease, background .2s ease;
+
+  @media (max-width: 1200px) {
+    padding: 22px 120px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 992px) {
+    padding: 20px 80px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 48px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 16px 42px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 465px) {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
 
   &-hero:hover,
   &-integration:hover {
@@ -41,6 +67,19 @@
     color: #3DB3E4;
     background: #FFFFFF;
     border: 2px solid #3DB3E4;
+    padding: 22px 124px;
+
+    @media (max-width: 992px) {
+      padding: 20px 86px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 16px 68px;
+    }
+
+    @media (max-width: 465px) {
+      padding: 14px 68px;
+    }
   }
 
   &-works:hover {

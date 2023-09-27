@@ -35,6 +35,18 @@
       font-weight: 700;
       line-height: normal;
       margin: 0 0 12px;
+
+      @media (max-width: 1200px) {
+        font-size: 36px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 28px;
+      }
+
+      @media (max-width: 465px) {
+        font-size: 24px;
+      }
     }
 
     &-description {
@@ -45,11 +57,39 @@
       font-weight: 500;
       line-height: normal;
       margin: 0 0 40px;
+
+      @media (max-width: 1400px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
     }
 
     &-img {
       height: initial;
       width: initial;
+
+      @media (max-width: 1200px) {
+        height: 250px;
+      }
+
+      @media (max-width: 992px) {
+        height: 200px;
+      }
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     &-row {
@@ -58,19 +98,30 @@
 
       &--step-4 {
         padding-left: 200px;
+
+        @media (max-width: 1200px) {
+          padding-left: 100px;
+        }
       }
     }
 
     &-row:nth-child(1) {
-
       flex-direction: column;
 
       max-width: 53%;
       width: 100%;
 
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
+
       & .after-line {
         z-index: 1;
         top: 30px;
+
+        @media (max-width: 768px) {
+          top: 20px;
+        }
       }
 
       & .before-line {
@@ -95,6 +146,10 @@
       width: 100%;
 
       justify-content: end;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     &:nth-child(even) {
