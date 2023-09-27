@@ -14,11 +14,9 @@ gsap.to('.integration__title', {
         start: "center+=200 center+=300",
         end: 2200,
         scrub: 1,
-        markers:true
     },
-    y: -200,
     autoAlpha: 0,
-    scale: 0.5
+    scale: 0.5,
 })
 
 
@@ -27,8 +25,9 @@ LottieScrollTrigger({
     path: "https://gist.githubusercontent.com/TamirlanMk/e1eceb4a62583408e90e36ddc5b39848/raw/80c79eb27d3cc5b58d0309faa3072ed179914af9/laptop.json",
     speed: "medium",
     pin: ".integration",
-    start: "350 center",
-    end: () => `+=${elem.offsetHeight}`,
+    start: "400 center",
+    end: () => `+=${elem.offsetHeight/2}`,
+    markers:true,
     scrub: 1,
 });
 
