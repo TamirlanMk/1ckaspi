@@ -27,7 +27,6 @@ LottieScrollTrigger({
     pin: ".integration",
     start: "400 center",
     end: () => `+=${elem.offsetHeight/2}`,
-    markers:true,
     scrub: 1,
 });
 
