@@ -6,31 +6,6 @@ let laptopJson = $.getJSON("/js/laptop.json", function (data) {
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
-var elem = document.getElementById('lottie__notebook');
-
-gsap.to('.integration__title', {
-    scrollTrigger: {
-        trigger: '.integration',
-        start: "center+=200 center+=300",
-        end: 2200,
-        scrub: 1,
-    },
-    autoAlpha: 0,
-    scale: 0.5,
-})
-
-
-LottieScrollTrigger({
-    target: "#lottie__notebook",
-    path: "https://gist.githubusercontent.com/TamirlanMk/e1eceb4a62583408e90e36ddc5b39848/raw/80c79eb27d3cc5b58d0309faa3072ed179914af9/laptop.json",
-    speed: "medium",
-    pin: ".integration",
-    start: "400 center",
-    end: () => `+=${elem.offsetHeight/2}`,
-    scrub: 1,
-});
-
-
 function LottieScrollTrigger(vars) {
     let playhead = {frame: 0},
         target = gsap.utils.toArray(vars.target)[0],
@@ -48,7 +23,6 @@ function LottieScrollTrigger(vars) {
         st[p] = vars[p];
     }
 
-    console.log(st);
     animation.addEventListener("DOMLoaded", function () {
         gsap.to(playhead, {
             frame: animation.totalFrames - 1,
@@ -58,7 +32,6 @@ function LottieScrollTrigger(vars) {
         });
     });
 }
-
 
 const text = [
     'Увеличение конверсии продаж',
@@ -70,6 +43,12 @@ const text = [
 
 // Laptop Animations
 let laptopScreen = window.matchMedia('(min-width:992px)')
+
+window.addEventListener('resize', () => {
+    laptopScreen = window.matchMedia('(min-width:992px)')
+}, {
+    passive: true
+})
 
 if (laptopScreen.matches) {
 
@@ -176,4 +155,28 @@ if (laptopScreen.matches) {
                 }, '<'
             )
     }
+
+    var elem = document.getElementById('lottie__notebook');
+
+    gsap.to('.integration__title', {
+        scrollTrigger: {
+            trigger: '.integration',
+            start: "300 center",
+            end: 2200,
+            scrub: 1,
+        },
+        autoAlpha: 0,
+        scale: 0.5,
+    })
+
+    LottieScrollTrigger({
+        target: "#lottie__notebook",
+        path: "https://gist.githubusercontent.com/TamirlanMk/e1eceb4a62583408e90e36ddc5b39848/raw/80c79eb27d3cc5b58d0309faa3072ed179914af9/laptop.json",
+        speed: "medium",
+        pin: ".integration",
+        start: "350 center",
+        renderer: 'canvas', // Required
+        end: () => `+=${elem.offsetHeight / 2}`,
+        scrub: 1,
+    });
 }

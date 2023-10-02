@@ -5,6 +5,10 @@
   &__title {
     margin-bottom: -200px;
     text-transform: uppercase;
+
+    @media (max-width: 992px) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -18,9 +22,28 @@
   #lottie__notebook {
     max-width: 1200px;
     width: 100%;
-    max-height: 720px;
-    height: 100%;
+    max-height: 70vh;
+    height: auto;
     flex-shrink: 0;
+    z-index: 100;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  #lottie__notebook-image {
+    display: none;
+    max-width: 1200px;
+    width: 100%;
+    max-height: 70vh;
+    height: auto;
+    flex-shrink: 0;
+    z-index: 100;
+
+    @media (max-width: 992px) {
+      display: block;
+    }
   }
 
   img {
