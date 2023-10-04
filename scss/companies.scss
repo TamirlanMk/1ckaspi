@@ -18,13 +18,18 @@
     &-slide {
       margin: 0 40px;
       border-radius: 20px;
-      background: #E0E0E0;
+      background: #fff;
       height: 120px;
+      padding: 10px;
+
+      overflow: hidden;
 
       img {
         object-fit: contain;
         display: block;
         height: 100%;
+        width: 100%;
+        max-width: 100%;
       }
     }
   }
