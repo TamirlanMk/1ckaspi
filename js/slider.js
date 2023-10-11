@@ -82,3 +82,10 @@ $('.price-list__slider').slick({
         }
     ],
 });
+
+$('.price-list__slider').on('setPosition', function () {
+    $(this).find('.price-list__slide').height('auto');
+    var slickTrack = $(this).find('.slick-track');
+    var slickTrackHeight = $(slickTrack).height();
+    $(this).find('.price-list__slide').css('height', slickTrackHeight + 'px');
+});

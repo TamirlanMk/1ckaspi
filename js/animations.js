@@ -165,7 +165,7 @@ if (laptopScreen.matches) {
     gsap.to('.integration__title', {
         scrollTrigger: {
             trigger: '.integration',
-            start: "300 center",
+            start: "400 center",
             end: 2200,
             scrub: 1,
         },
@@ -175,10 +175,10 @@ if (laptopScreen.matches) {
 
     LottieScrollTrigger({
         target: "#lottie__notebook",
-        path: "../assets/lottie/data.json",
+        path: "./../assets/lottie/data.json",
         speed: "medium",
         pin: ".integration",
-        start: "350 center",
+        start: "400 center",
         renderer: 'canvas', // Required
         end: () => `+=${elem.offsetHeight / 2}`,
         scrub: 1,
