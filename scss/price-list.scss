@@ -1,0 +1,159 @@
+.price-list {
+  position: relative;
+
+  background-color: #0B1F27;
+
+  .thing {
+    pointer-events: none;
+
+    position: absolute;
+    
+    &-1 {
+      width: 318px;
+      top: -64px;
+      left: 70px;
+      z-index: 0;
+    }
+
+    &-2 {
+      width: 260px;
+      z-index: 0;
+      top: 50%;
+      left: 50%;
+    }
+
+    &-3 {
+      z-index: 100;
+      bottom: -105px;
+      right: 0;
+      width: 239px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    color: #FFFFFF;
+    margin-bottom: 76px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .slick-track {
+    gap: 0 80px;
+    //margin-left: 600px;
+  }
+
+  .slick-list {
+    overflow: visible;
+  }
+
+  &__slider-nav {
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    left: 0;
+    right: 0;
+    bottom: -60px;
+  }
+
+  .price-arrow {
+    @include flex-row-center;
+
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    border: none;
+
+    padding: 8px 20px;
+    margin: 0;
+
+    cursor: pointer;
+
+    transition: background-color .2s $transition-primary;
+
+    &.slick-disabled {
+      background-color: rgb(255 255 255 / 30%);
+    }
+  }
+
+  &__slide {
+    max-width: 720px;
+    width: 100%;
+    padding: 60px;
+
+    border-radius: 60px;
+    border: 2px dashed #fff;
+
+    color: #FFFFFF;
+
+    transition: 1s border cubic-bezier(.05, .5, 0, 1);
+
+    &.slick-current,
+    &.slick-active {
+      border: 2px dashed #3DB3E4;
+    }
+
+    &:not(:first-child) {
+      margin-left: 80px;
+    }
+
+    &-title {
+      color: #FFF;
+      font-family: $inter;
+      font-size: 44px;
+      font-weight: 700;
+    }
+
+    &-btn {
+      margin-top: 90px;
+    }
+
+    &-info__list {
+      display: flex;
+      flex-direction: column;
+      margin: 65px 0 0;
+      padding: 0 0 0 40px;
+
+      li {
+        position: relative;
+
+        list-style: none;
+
+        color: #FFF;
+        font-family: $montserrat;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.15;
+
+        &::before {
+          content: '';
+
+          position: absolute;
+          left: -40px;
+          top: -1px;
+          border-radius: 50%;
+
+          display: block;
+          min-width: 30px;
+          width: 30px;
+          height: 30px;
+
+          background-color: rgb(255 255 255 / 30%);
+        }
+
+        &:not(:first-child) {
+          margin-top: 35px;
+        }
+      }
+    }
+  }
+
+}

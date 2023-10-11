@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 
 *,
 *::before,
@@ -8,11 +9,17 @@
   box-sizing: border-box;
 }
 
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: $inter;
   font-size: 18px;
+  line-height: 1.2;
   color: #1B1814;
 }
 
@@ -135,4 +142,5 @@ a {
 @import "about-work";
 @import "pros-integration";
 @import "works";
+@import "price-list";
 @import "companies";

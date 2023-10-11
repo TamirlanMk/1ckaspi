@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.info('App.js connected')
+    // console.info('App.js connected')
 });

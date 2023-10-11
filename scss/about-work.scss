@@ -1,20 +1,13 @@
-.about-work {
-
-}
-
 .about-work__list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column;
 
   .about-work__item {
+    @include flex-row-space-b;
+
     position: relative;
     width: 100%;
-    margin-bottom: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    //margin-bottom: 40px;
+    margin-top: -60px;
 
     &:nth-child(even) {
       flex-direction: row-reverse;
@@ -28,13 +21,12 @@
 
       display: inline-block;
       z-index: 10;
-      color: #3DB3E4;
-      font-family: $inter;
-      font-size: 48px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
       margin: 0 0 12px;
+
+      font-size: 48px;
+      font-family: $inter;
+      color: #3DB3E4;
+      font-weight: 700;
 
       @media (max-width: 1200px) {
         font-size: 36px;
@@ -50,12 +42,11 @@
     }
 
     &-description {
-      color: #000;
-      font-family: $inter;
       font-size: 24px;
-      font-style: normal;
+      font-family: $inter;
       font-weight: 500;
-      line-height: normal;
+      color: #000;
+
       margin: 0 0 40px;
 
       @media (max-width: 1400px) {
@@ -96,55 +87,51 @@
       display: flex;
       position: relative;
 
-      &--step-4 {
-        padding-left: 100px;
-      }
-    }
+      &:nth-child(1) {
+        flex-direction: column;
 
-    &-row:nth-child(1) {
-      flex-direction: column;
-
-      max-width: 53%;
-      width: 100%;
-
-      @media (max-width: 768px) {
-        max-width: 100%;
-      }
-
-      & .after-line {
-        z-index: 1;
-        top: 30px;
+        max-width: 53%;
+        width: 100%;
 
         @media (max-width: 768px) {
-          top: 20px;
+          max-width: 100%;
+        }
+
+        & .after-line {
+          z-index: 1;
+          top: 30px;
+
+          @media (max-width: 768px) {
+            top: 20px;
+          }
+        }
+
+        & .before-line {
+          z-index: 1;
+          bottom: 0;
+        }
+
+        & .after-line,
+        & .before-line {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          height: 4px;
+          background: #3DB3E4;
         }
       }
 
-      & .before-line {
-        z-index: 1;
-        bottom: 0;
-      }
-
-      & .after-line,
-      & .before-line {
-        content: '';
-        display: block;
-        position: absolute;
+      &:nth-child(2) {
+        max-width: 47%;
         width: 100%;
-        left: 0;
-        height: 4px;
-        background: #3DB3E4;
-      }
-    }
 
-    &-row:nth-child(2) {
-      max-width: 47%;
-      width: 100%;
+        justify-content: end;
 
-      justify-content: end;
-
-      @media (max-width: 768px) {
-        display: none;
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
     }
 

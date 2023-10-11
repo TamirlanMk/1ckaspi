@@ -19,7 +19,7 @@
   padding: 22px 150px;
   background: #3DB3E4;
 
-  transition: color .2s ease, background .2s ease;
+  transition: color .2s ease, background .2s ease, border .2s ease;
 
   @media (max-width: 1200px) {
     padding: 22px 120px;
@@ -59,6 +59,18 @@
   }
 
   &-white:hover {
+    color: #fff;
+    background: #3DB3E4;
+    border: 2px solid #3DB3E4;
+  }
+
+  &-white-border {
+    color: #3DB3E4;
+    background: #FFFFFF;
+    border: 2px solid #FFF;
+  }
+
+  &-white-border:hover {
     color: #fff;
     background: #3DB3E4;
   }

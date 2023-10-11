@@ -1,7 +1,6 @@
-let laptopJson = $.getJSON("/js/laptop.json", function (data) {
-    return data;
-});
-
+// let laptopJson = $.getJSON("../assets/lottie/data.json", function (data) {
+//     return data;
+// });
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -56,13 +55,15 @@ if (laptopScreen.matches) {
         toggleActions: 'play none none reverse'
     });
 
-    tlHero.add('hero__image').from('.hero__image-1', {
-        yPercent: 100,
-        duration: 1.5
-    }, {}, 'hero__image').from('.hero__image-2', {
-        yPercent: -100,
-        duration: 1.5
-    }, {}, 'hero__image')
+    tlHero.add('hero__image')
+        .to('.hero__image-1', {
+            yPercent: -110,
+            duration: 1.5
+        }, 'hero__image')
+        .to('.hero__image-2', {
+            yPercent: 110,
+            duration: 1.5
+        }, {}, 'hero__image')
 
     let tlAdvantages = gsap.timeline({
         scrollTrigger: {
@@ -80,7 +81,7 @@ if (laptopScreen.matches) {
             }, {
                 opacity: 1,
                 xPercent: 0,
-                duration: 0.4
+                duration: 0.3
             }, '>')
     }
 
@@ -92,7 +93,9 @@ if (laptopScreen.matches) {
         }
     });
 
-    for (let i = 1; i <= 4; i++) {
+    const aboutWorkItems = document.querySelectorAll('.about-work__item');
+
+    for (let i = 1; i <= aboutWorkItems.length; i++) {
         tlAboutWork
             .fromTo(`.about-work__item:nth-child(${i}) .about-work__item-title`, {
                 color: '#fff'
@@ -112,20 +115,21 @@ if (laptopScreen.matches) {
                 color: '#fff'
             }, {
                 color: '#000',
-                duration: 1
+                duration: 2,
+                ease: CustomEase.create("custom", "M0,0 C0.046,0.51 0.148,0.724 0.314,0.862 0.415,0.946 0.856,1 1,1 ")
             }, '<')
             .fromTo(`.about-work__item:nth-child(${i}) .after-line`, {
                 width: '0px'
             }, {
                 width: '100%',
                 delay: .25,
-                duration: 1
+                duration: 1.25
             }, '<')
             .fromTo(`.about-work__item:nth-child(${i}) .before-line`, {
                 width: '0px'
             }, {
                 width: '100%',
-                duration: 1
+                duration: 1.25
             }, '<')
     }
 
@@ -151,7 +155,7 @@ if (laptopScreen.matches) {
                     text: {
                         value: text[i - 1],
                     },
-                    duration: 1
+                    duration: .6
                 }, '<'
             )
     }
@@ -171,7 +175,7 @@ if (laptopScreen.matches) {
 
     LottieScrollTrigger({
         target: "#lottie__notebook",
-        path: "https://gist.githubusercontent.com/TamirlanMk/e1eceb4a62583408e90e36ddc5b39848/raw/80c79eb27d3cc5b58d0309faa3072ed179914af9/laptop.json",
+        path: "../assets/lottie/data.json",
         speed: "medium",
         pin: ".integration",
         start: "350 center",

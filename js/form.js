@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorClassInput = 'error'; // Добавляется родительскому классу form__group, если с полем че та не так
     const btnSubmittingClass = 'btn--submitting'; // Добавляется кнопке, если при отправке
     const formSubmittingClass = 'submitted'; // Добавляется форме, если при отправке
+    const parentClassInput = '.form__group';
 
     const formInputs = document.querySelectorAll('.feedback__form .form__input');
     const form = document.querySelector('.feedback__form');
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formInputs.forEach((input, i) => {
 
         input.addEventListener('focus', (e) => {
-            let parent = e.target.closest('.form__group');
+            let parent = e.target.closest(parentClassInput);
 
             if (parent.classList.contains(errorClassInput)) {
                 parent.classList.remove(errorClassInput);
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Remove Class with gradient border for Form Group
         input.addEventListener('focusout', (e) => {
-            let parent = e.target.closest('.form__group');
+            let parent = e.target.closest(parentClassInput);
 
             if (e.target.value === '') {
                 parent.classList.remove(successClassInput)
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check Inputs value
         formInputs.forEach((input, i) => {
             if (input.value === '') {
-                input.closest('.form__group').classList.add(errorClassInput);
+                input.closest(parentClassInput).classList.add(errorClassInput);
                 hasEmpty = true;
             }
         })
@@ -87,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .finally((response) => {
                 clearInputs(formInputs);
                 btnSubmit.classList.remove(btnSubmittingClass);
-
                 form.classList.remove(formSubmittingClass)
             });
     });
@@ -104,10 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function clearInputs(inputs) {
         inputs.forEach((input, i) => {
-            let parent = input.closest('.form__group');
-
-            input.value = '';
+            let parent = input.closest(parentClassInput);
             parent.classList.remove(successClassInput)
+            input.value = '';
         });
     }
 });
