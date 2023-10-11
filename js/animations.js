@@ -161,6 +161,7 @@ if (laptopScreen.matches) {
     }
 
     var elem = document.getElementById('lottie__notebook');
+    const path = `${window.location.href.split('?')[0]}/assets/lottie/data.json`;
 
     gsap.to('.integration__title', {
         scrollTrigger: {
@@ -175,7 +176,7 @@ if (laptopScreen.matches) {
 
     LottieScrollTrigger({
         target: "#lottie__notebook",
-        path: "./../assets/lottie/data.json",
+        path: path,
         speed: "medium",
         pin: ".integration",
         start: "400 center",
