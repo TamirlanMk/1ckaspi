@@ -153,15 +153,13 @@
       margin: 0 !important;
     }
 
-    &.slick-current,
-    &.slick-active {
-      border: 2px dashed #3DB3E4;
-    }
+    //&.slick-current,
+    //&.slick-active {
+    //  border: 2px dashed #3DB3E4;
+    //}
 
-    &:first-child {
-      @media (max-width: 465px) {
-        border: 2px dashed #3DB3E4;
-      }
+    &:has(&-btn:hover) {
+      border: 2px dashed #3DB3E4;
     }
 
     &:not(:first-child) {
