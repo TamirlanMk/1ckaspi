@@ -57,11 +57,11 @@ if (laptopScreen.matches) {
 
     tlHero.add('hero__image')
         .to('.hero__image-1', {
-            yPercent: -110,
+            y: 0,
             duration: 1.5
         }, 'hero__image')
         .to('.hero__image-2', {
-            yPercent: 110,
+            y: 0,
             duration: 1.5
         }, {}, 'hero__image')
 

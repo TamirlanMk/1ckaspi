@@ -107,7 +107,11 @@
     width: 100%;
 
     @media (max-width: 576px) {
-      max-width: 80%;
+      max-width: 78%;
+    }
+
+    @media (max-width: 576px) {
+      max-width: 90%;
     }
   }
 

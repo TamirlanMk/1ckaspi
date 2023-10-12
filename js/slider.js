@@ -68,16 +68,19 @@ $('.price-list__slider').slick({
         {
             breakpoint: 1170,
             settings: {
+                variableWidth: true,
             }
         },
         {
-            breakpoint: 768,
+            breakpoint: 992,
             settings: {
+                variableWidth: false,
             }
         },
         {
             breakpoint: 560,
             settings: {
+                variableWidth: false,
             }
         }
     ],
