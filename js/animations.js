@@ -32,6 +32,44 @@ function LottieScrollTrigger(vars) {
     });
 }
 
+const ScrollLottie = (obj) => {
+
+    let anim = lottie.loadAnimation({
+        container: document.querySelector(obj.target),
+        renderer: 'canvas',
+        loop: false,
+        autoplay: false,
+        path: obj.path
+    });
+
+    let timeObj = {currentFrame: 0}
+    let endString = (obj.speed === "slow") ? "+=2000" : (obj.speed === "medium") ? "+=1000" : (obj.speed === undefined) ? "+=1250" : "+=500";
+
+    ScrollTrigger.create({
+        trigger: obj.target,
+        scrub: true,
+        pin: obj.pin,
+        start: "top top",
+        end: endString,
+        onUpdate: self => {
+            if(obj.duration) {
+                gsap.to(timeObj, {
+                    duration: obj.duration,
+                    currentFrame:(Math.floor(self.progress *  (anim.totalFrames - 1))),
+                    onUpdate: () => {
+                        anim.goToAndStop(timeObj.currentFrame, true)
+                    },
+                    ease: 'expo'
+                })
+            } else {
+                anim.goToAndStop(self.progress *  (anim.totalFrames - 1), true)
+            }
+        }
+    });
+
+}
+
+
 const text = [
     'Увеличение конверсии продаж',
     'Улучшение эффективности рабочего времени',
@@ -136,7 +174,7 @@ if (laptopScreen.matches) {
     let tlProsIntegration = gsap.timeline({
         scrollTrigger: {
             trigger: ".pros-integration",
-            start: '-100px center',
+            start: 'center center',
             toggleActions: 'play none none reverse',
         }
     })
@@ -160,8 +198,24 @@ if (laptopScreen.matches) {
             )
     }
 
-    var elem = document.getElementById('lottie__notebook');
-    const path = `${window.location.href.split('?')[0]}/assets/lottie/data.json`;
+    let priceList = document.querySelector('.price-list');
+
+    // gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: '.price-list',
+    //         start: 'center-=100 center',
+    //         toggleActions: 'play none none reverse',
+    //         markers: true,
+    //         pin: '.price-list',
+    //         scrub: true,
+    //         end: () => "+=" + priceList.offsetWidth,
+    //     },
+    // }).
+    // to('.price-list__slider', {
+    //     xPercent: -110,
+    // });
+
+    let elem = document.getElementById('lottie__notebook');
 
     gsap.to('.integration__title', {
         scrollTrigger: {
@@ -176,12 +230,39 @@ if (laptopScreen.matches) {
 
     LottieScrollTrigger({
         target: "#lottie__notebook",
-        path: path,
+        path: getPathForLottie(),
         speed: "medium",
         pin: ".integration",
-        start: "400 center",
+        start: "60% center",
+        anticipatePin: 1,
+        // markers: true,
         renderer: 'canvas', // Required
         end: () => `+=${elem.offsetHeight / 2}`,
         scrub: 1,
     });
+
+    // ScrollLottie({
+    //     target: "#lottie__notebook",
+    //     path: getPathForLottie(),
+    //     speed: "medium",
+    //     pin: ".integration",
+    //     start: "60% center",
+    //     markers: true,
+    //     renderer: 'canvas', // Required
+    //     end: () => `+=${elem.offsetHeight / 2}`,
+    //     scrub: 1,
+    // });
+}
+
+function getPathForLottie() {
+    const urlArray = window.location.href.split('/');
+    const checkUrl = urlArray[urlArray.length - 1].indexOf('.html');
+
+    let path = '';
+
+    if (checkUrl > 0) {
+        urlArray.pop();
+    }
+
+    return path = `${urlArray.join('/')}/assets/lottie/data.json`;
 }
